@@ -1,5 +1,14 @@
 
-import { ArrowRight, Plus, UserPlus, Eye, Wrench } from "lucide-react";
+import { 
+  ArrowRight, 
+  Building, 
+  User, 
+  UserPlus, 
+  Eye, 
+  Wrench, 
+  ShieldCheck, 
+  FileUp 
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import DashboardLayout from "@/components/DashboardLayout";
@@ -12,7 +21,7 @@ const Dashboard = () => {
         <div>
           <h1 className="text-2xl font-bold tracking-tight">Dashboard</h1>
           <p className="text-muted-foreground">
-            Overview of your property management activities
+            Welcome to LetHaven - your property management solution
           </p>
         </div>
 
@@ -20,7 +29,7 @@ const Dashboard = () => {
           {/* Rent Overview Card */}
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-navy">Rent Overview</CardTitle>
+              <CardTitle className="text-primary">Rent Overview</CardTitle>
               <CardDescription>
                 Summary of your rental income
               </CardDescription>
@@ -69,7 +78,7 @@ const Dashboard = () => {
           {/* Tenant Overview Card */}
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-navy">Tenant Overview</CardTitle>
+              <CardTitle className="text-primary">Tenant Overview</CardTitle>
               <CardDescription>
                 Summary of your tenancies
               </CardDescription>
@@ -121,10 +130,59 @@ const Dashboard = () => {
             </CardContent>
           </Card>
 
+          {/* Properties Overview Card */}
+          <Card>
+            <CardHeader className="pb-2">
+              <CardTitle className="text-primary">Properties</CardTitle>
+              <CardDescription>
+                Your property portfolio overview
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="space-y-1">
+                    <p className="text-sm text-muted-foreground">Total</p>
+                    <p className="text-2xl font-bold">6</p>
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-sm text-muted-foreground">Occupied</p>
+                    <p className="text-2xl font-bold">4</p>
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-sm text-muted-foreground">Vacant</p>
+                    <p className="text-2xl font-bold">2</p>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <h4 className="text-sm font-medium">Property Types</h4>
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between py-1 border-b border-border">
+                      <p className="text-sm font-medium">Apartments</p>
+                      <p className="font-medium">3</p>
+                    </div>
+                    <div className="flex items-center justify-between py-1 border-b border-border">
+                      <p className="text-sm font-medium">Houses</p>
+                      <p className="font-medium">3</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="pt-2">
+                  <Button variant="outline" size="sm" className="w-full" asChild>
+                    <Link to="/properties" className="flex items-center justify-center gap-1">
+                      <span>View Properties</span>
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
           {/* Maintenance Requests Card */}
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-navy">Maintenance Requests</CardTitle>
+              <CardTitle className="text-primary">Maintenance Requests</CardTitle>
               <CardDescription>
                 Summary of maintenance issues
               </CardDescription>
@@ -175,6 +233,106 @@ const Dashboard = () => {
               </div>
             </CardContent>
           </Card>
+
+          {/* Compliance Card */}
+          <Card>
+            <CardHeader className="pb-2">
+              <CardTitle className="text-primary">Compliance</CardTitle>
+              <CardDescription>
+                Property compliance overview
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="space-y-1">
+                    <p className="text-sm text-muted-foreground">Valid</p>
+                    <p className="text-2xl font-bold text-success">8</p>
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-sm text-muted-foreground">Expiring</p>
+                    <p className="text-2xl font-bold text-warning">2</p>
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-sm text-muted-foreground">Expired</p>
+                    <p className="text-2xl font-bold text-destructive">2</p>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <h4 className="text-sm font-medium">Expiring Soon</h4>
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between py-1 border-b border-border">
+                      <div>
+                        <p className="text-sm font-medium">Gas Safety Certificate</p>
+                        <p className="text-xs text-muted-foreground">123 High Street</p>
+                      </div>
+                      <p className="text-xs font-medium text-warning">Expires in 14 days</p>
+                    </div>
+                    <div className="flex items-center justify-between py-1 border-b border-border">
+                      <div>
+                        <p className="text-sm font-medium">Fire Safety Assessment</p>
+                        <p className="text-xs text-muted-foreground">8 Queen's Road</p>
+                      </div>
+                      <p className="text-xs font-medium text-warning">Expires in 30 days</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="pt-2">
+                  <Button variant="outline" size="sm" className="w-full" asChild>
+                    <Link to="/compliance" className="flex items-center justify-center gap-1">
+                      <span>View Compliance</span>
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Financial Summary Card */}
+          <Card>
+            <CardHeader className="pb-2">
+              <CardTitle className="text-primary">Financial Summary</CardTitle>
+              <CardDescription>
+                Your rental income at a glance
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-1">
+                    <p className="text-sm text-muted-foreground">Monthly Income</p>
+                    <p className="text-2xl font-bold">£9,400</p>
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-sm text-muted-foreground">Annual Estimate</p>
+                    <p className="text-2xl font-bold">£112,800</p>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <h4 className="text-sm font-medium">Rent Status</h4>
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between py-1 border-b border-border">
+                      <p className="text-sm font-medium">Received (MTD)</p>
+                      <p className="font-medium">£3,800</p>
+                    </div>
+                    <div className="flex items-center justify-between py-1 border-b border-border">
+                      <p className="text-sm font-medium">Outstanding</p>
+                      <p className="font-medium text-destructive">£5,600</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="pt-2">
+                  <Button variant="outline" size="sm" className="w-full" asChild>
+                    <Link to="/invoices" className="flex items-center justify-center gap-1">
+                      <span>View Invoices</span>
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
 
         {/* Quick Actions */}
@@ -182,21 +340,33 @@ const Dashboard = () => {
           <h2 className="text-lg font-semibold">Quick Actions</h2>
           <div className="flex flex-wrap gap-3">
             <Button className="bg-accent hover:bg-accent/90" asChild>
-              <Link to="/tenants/add" className="flex items-center gap-2">
+              <Link to="/tenants" className="flex items-center gap-2">
                 <UserPlus className="h-4 w-4" />
                 <span>Add Tenant</span>
               </Link>
             </Button>
-            <Button variant="outline" className="border-navy text-navy" asChild>
+            <Button variant="outline" className="border-primary text-primary" asChild>
               <Link to="/rent" className="flex items-center gap-2">
                 <Eye className="h-4 w-4" />
                 <span>View Rent Status</span>
               </Link>
             </Button>
-            <Button variant="outline" className="border-navy text-navy" asChild>
+            <Button variant="outline" className="border-primary text-primary" asChild>
               <Link to="/maintenance/add" className="flex items-center gap-2">
                 <Wrench className="h-4 w-4" />
                 <span>Log Maintenance</span>
+              </Link>
+            </Button>
+            <Button variant="outline" className="border-primary text-primary" asChild>
+              <Link to="/properties/add" className="flex items-center gap-2">
+                <Building className="h-4 w-4" />
+                <span>Add Property</span>
+              </Link>
+            </Button>
+            <Button variant="outline" className="border-primary text-primary" asChild>
+              <Link to="/compliance" className="flex items-center gap-2">
+                <FileUp className="h-4 w-4" />
+                <span>Upload Certificate</span>
               </Link>
             </Button>
           </div>

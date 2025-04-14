@@ -26,7 +26,7 @@ const Navbar = ({ toggleSidebar }: NavbarProps) => {
         >
           <Menu className="h-5 w-5" />
         </Button>
-        <div className="text-xl font-bold text-navy">Property Oasis</div>
+        <div className="text-xl font-bold text-primary">LetHaven</div>
       </div>
       <div className="flex items-center space-x-4">
         <Button variant="ghost" size="icon" className="relative">
@@ -37,7 +37,7 @@ const Navbar = ({ toggleSidebar }: NavbarProps) => {
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-full bg-navy flex items-center justify-center text-white">
+              <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-white">
                 <User className="h-4 w-4" />
               </div>
               <div className="hidden md:flex items-center gap-1">

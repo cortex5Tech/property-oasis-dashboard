@@ -1,5 +1,13 @@
 
-import { Home, Banknote, Users, Wrench, FileText } from "lucide-react";
+import { 
+  Home, 
+  Banknote, 
+  Users, 
+  Wrench, 
+  FileText, 
+  Building, 
+  ShieldCheck 
+} from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
@@ -27,9 +35,19 @@ const Sidebar = ({ isOpen }: SidebarProps) => {
       path: "/tenants",
     },
     {
+      title: "Properties",
+      icon: Building,
+      path: "/properties",
+    },
+    {
       title: "Maintenance",
       icon: Wrench,
       path: "/maintenance",
+    },
+    {
+      title: "Compliance",
+      icon: ShieldCheck,
+      path: "/compliance",
     },
     {
       title: "Invoices",
@@ -47,7 +65,7 @@ const Sidebar = ({ isOpen }: SidebarProps) => {
     >
       <div className="h-full flex flex-col">
         <div className="h-16 border-b flex items-center justify-center">
-          <span className="text-xl font-bold text-navy">Property Oasis</span>
+          <span className="text-xl font-bold text-primary">LetHaven</span>
         </div>
         <div className="flex-1 py-6">
           <nav className="px-2 space-y-1">
@@ -58,8 +76,8 @@ const Sidebar = ({ isOpen }: SidebarProps) => {
                 className={cn(
                   "flex items-center gap-3 px-3 py-2 rounded-md transition-colors",
                   location.pathname === item.path
-                    ? "bg-navy text-white"
-                    : "text-navy hover:bg-softgrey"
+                    ? "bg-primary text-white"
+                    : "text-primary hover:bg-softgrey"
                 )}
               >
                 <item.icon className="h-5 w-5" />
@@ -70,7 +88,7 @@ const Sidebar = ({ isOpen }: SidebarProps) => {
         </div>
         <div className="p-4 border-t">
           <div className="text-sm text-muted-foreground">
-            Property Oasis Dashboard
+            LetHaven Dashboard
             <div className="mt-1">v1.0.0</div>
           </div>
         </div>

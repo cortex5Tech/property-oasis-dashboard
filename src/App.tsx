@@ -9,6 +9,8 @@ import RentTracker from "./pages/RentTracker";
 import TenantManagement from "./pages/TenantManagement";
 import MaintenanceManagement from "./pages/MaintenanceManagement";
 import InvoicePage from "./pages/InvoicePage";
+import PropertyPage from "./pages/PropertyPage";
+import CompliancePage from "./pages/CompliancePage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +26,8 @@ const App = () => (
           <Route path="/rent" element={<RentTracker />} />
           <Route path="/tenants" element={<TenantManagement />} />
           <Route path="/maintenance" element={<MaintenanceManagement />} />
+          <Route path="/properties" element={<PropertyPage />} />
+          <Route path="/compliance" element={<CompliancePage />} />
           <Route path="/invoices" element={<InvoicePage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

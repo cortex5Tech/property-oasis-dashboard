@@ -25,7 +25,9 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
             if (sidebarOpen) setSidebarOpen(false);
           }}
         >
-          {children}
+          <div className="max-w-7xl mx-auto">
+            {children}
+          </div>
         </main>
       </div>
     </div>
